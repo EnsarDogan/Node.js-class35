@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 app.use(express.json());
 
 app.post("/weather", (req, res) => {
-  let cityName = req.body.city;
+  const cityName = req.body.city;
   res.send(cityName);
 });
 
