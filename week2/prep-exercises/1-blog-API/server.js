@@ -55,7 +55,7 @@ app.get("/blogs", (req, res) => {
       }
     });
     res.send(blogsArr);
-  }); // how to get the file names of all files in a folder??
+  });
 });
 
 app.listen(3000);
