@@ -4,13 +4,9 @@ import app from "../app.js";
 const request = supertest(app);
 
 describe("POST /weather", () => {
-  test("the request should include a valid city name", async () => {
+  test("the request should include a valid city name and if so the response should return 200 status code", async () => {
     const response = await request.post("/weather").send({ city: "Bussum" });
     expect(response.body.split(":")[0]).toBeDefined();
-  });
-
-  test("the response should return 200 status code if there is a valid city name sent to the server", async () => {
-    const response = await request.post("/weather").send({ city: "Bussum" });
     expect(response.statusCode).toBe(200);
   });
 

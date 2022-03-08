@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/weather", async (req, res) => {
-  let cityName = req.body.city;
+  const cityName = req.body.city;
   if (!cityName) {
     res.status(400).json({ weatherText: "City is not found!" });
   } else {
